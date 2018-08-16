@@ -12,14 +12,25 @@ class ProductController extends Controller
 
     public function store()
     {
+        //var_dump($_FILES);exit();
         $product = new Product;
         $product->name        = $_POST['name'];
         $product->description = $_POST['description'];
-        $product->image       = $_POST['image'];
+        $product->image       = $_FILES['image']['name'];
         $product->price       = $_POST['price'];
         $product->category    = $_POST['category'];
         $product->save();
-        return redirect()->route('products')->with('message', 'Product created successfully!');
+
+        $uploaddir = public_path().'/img/'.$product->id.'/';
+
+        if (!file_exists($uploaddir)) {
+            mkdir($uploaddir, 0777, true);
+        }
+
+        $uploadfile = $uploaddir . basename($_FILES['image']['name']);
+        move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
+
+        return redirect('products')->with('message', 'Product updated successfully!');
     }
   
     public function edit($id)
@@ -33,17 +44,27 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->name        = $_POST['name'];
         $product->description = $_POST['description'];
-        $product->image       = $_POST['image'];
+        $product->image       = $_FILES['image']['name'];
         $product->price       = $_POST['price'];
         $product->category    = $_POST['category'];
         $product->save();
-        return redirect()->route('products.index')->with('message', 'Product updated successfully!');
+
+        $uploaddir = public_path().'/img/'.$product->id.'/';
+
+        if (!file_exists($uploaddir)) {
+            mkdir($uploaddir, 0777, true);
+        }
+        
+        $uploadfile = $uploaddir . basename($_FILES['image']['name']);
+        move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
+
+        return redirect('products')->with('message', 'Product updated successfully!');
     }
   
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        redirect(route('products')->with('alert-success','Product has been deleted!'));
+        return redirect('products')->with('alert-success','Product has been deleted!');
     }
 }

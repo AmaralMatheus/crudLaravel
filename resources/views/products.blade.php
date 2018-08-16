@@ -22,7 +22,7 @@
 			<td style='padding:7px;'>{{$product->name}}</td>
 			<td style='padding:7px;'>{{$product->price}}</td>
 			<td style='padding:7px;' align="center">
-				<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#Excluir'>
+				<button type='button' class='btn btn-danger' onclick="getId({{$product->id}})" data-toggle='modal' data-target='#Excluir'>
 					<span class='glyphicon glyphicon-trash' aria-hidden='true'>
 				</button>
 				<a class='btn btn-warning' href='products/edit/{{$product->id}}'>
@@ -44,7 +44,7 @@
 		        <p>Deseja realmente excluir esta pessoa?</p>
 		      </div>
 		      <div class="modal-footer" align="center">
-		        <a href='products/delete/{{$product->id}}' class="btn btn-danger">Sim</a>
+		        <a href='products/delete/{{$product["id"]}}' class="btn btn-danger">Sim</a>
 		        <a class="btn btn-success" data-dismiss="modal">Não</a>
 		      </div>
 		    </div>
