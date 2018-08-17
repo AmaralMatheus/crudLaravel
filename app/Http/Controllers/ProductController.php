@@ -6,8 +6,14 @@ class ProductController extends Controller
 {
     public function init()
     {
-        $products = Product::orderBy('id')->paginate(100);
+        $products = Product::where('active',1)->orderBy('id')->paginate(100);
         return view('products',['products' => $products]);
+    }
+
+    public function preview($id)
+    {
+        $products = $id? Product::findOrFail($id) : $_POST;
+        return view('product',['product' => $products]);
     }
 
     public function store()
@@ -54,7 +60,7 @@ class ProductController extends Controller
         if (!file_exists($uploaddir)) {
             mkdir($uploaddir, 0777, true);
         }
-        
+
         $uploadfile = $uploaddir . basename($_FILES['image']['name']);
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
@@ -64,7 +70,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
-        $product->delete();
+        $product->active = false;
+        $product->save();
         return redirect('products')->with('alert-success','Product has been deleted!');
     }
 }

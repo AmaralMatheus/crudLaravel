@@ -21,6 +21,10 @@ Route::get('products/insert', function () {
     return view('insert-product');
 });
 
+
+Route::get('products/preview/{id}', 'ProductController@preview');
+Route::post('products/preview', 'ProductController@preview');
+
 Route::get('products/edit/{id}', 'ProductController@edit');
 Route::post('products/update/{id}', 'ProductController@update');
 

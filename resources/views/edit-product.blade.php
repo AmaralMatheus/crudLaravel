@@ -6,13 +6,14 @@
 	<p>
 		<input type="submit" class="btn btn-primary" role="button" placeholder="Save Product">
 		<a class="btn btn-danger" href="/crudLaravel/public/products" role="button">Cancel</a>
-		<a class="btn btn-danger" href="/crudLaravel/public/products" role="button">Preview</a>
+		<a class="btn btn-primary" href="/crudLaravel/public/products/preview/{{$product['id']}}" role="button">Preview</a>
 	</p>
 	<div class="row">
 		<div class="col-md-6">
 			<p><input type="text" class="form-control" name="name" value="{{$product['name']}}" placeholder="Product Name" aria-describedby="sizing-addon1" required></p>
 
-			<p><input type="text" class="form-control" name="description" value="{{$product['description']}}" placeholder="Description" aria-describedby="sizing-addon1" required></p>
+			<p><textarea class="form-control" name="description"  rows="9" placeholder="Description" required>{{$product['description']}}
+			</textarea></p>
 
 			<p><input type="text" class="form-control" name="price" value="{{$product['price']}}" id="price" placeholder="Price" aria-describedby="sizing-addon1" required></p>
 		</div>
@@ -23,8 +24,8 @@
 			<p><input type="file" class="form-control"  name="image" placeholder="Product Name" accept="image/*" onchange="loadFile(event)" required></p>
 
 			<p>
-				<select type="text" class="form-control" name="category" aria-describedby="sizing-addon1" required>
-					<option>Category</option>
+				<select type="text" class="form-control" name="category" aria-describedby="sizing-addon1" required="required">
+					<option value="">Category</option>
 					<option value="1">Teste</option>
 				</select>
 			</p>

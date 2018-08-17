@@ -13,19 +13,19 @@
         <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
         <title>ProgQuest - @yield('title')</title>
     </head>
-    <body class="container">
+    <body>
 
     	<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="#">
-		        <img alt="Brand" src="...">
+		        <img class="img-responsive" style="width: 25%" alt="Brand" src="{{ URL::asset('img/logo.png') }}">
 		      </a>
 		    </div>
 		  </div>
 		</nav>
 
-       <div>
+       <div class="container">
     		@yield('content')
        </div>
     </body>

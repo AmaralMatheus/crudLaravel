@@ -43,14 +43,19 @@
 		      <div class="modal-body">
 		        <p>Deseja realmente excluir esta pessoa?</p>
 		      </div>
-		      <div class="modal-footer" align="center">
-		        <a href='products/delete/{{$product["id"]}}' class="btn btn-danger">Sim</a>
+		      <div class="modal-footer" id="footer" align="center">
+		      	<a id="delete-id" class="btn btn-danger">Sim</a>
 		        <a class="btn btn-success" data-dismiss="modal">Não</a>
 		      </div>
 		    </div>
-
 		  </div>
 		</div>
 	 </tbody>
 	</table>
+
+	<script type="text/javascript">
+		function getId(id){
+			var div = document.getElementById('delete-id').href="products/delete/"+id;
+		}
+	</script>
 @endsection
