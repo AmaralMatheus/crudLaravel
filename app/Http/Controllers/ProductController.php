@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\Category;
 class ProductController extends Controller
 {
     public function init()
@@ -47,7 +48,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('edit-product',compact('product'));
+        $categories = Category::get();
+        return view('edit-product',['product' => $product,'categories' => $categories]);
     }
   
     public function update($id)
@@ -55,7 +57,10 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->name        = $_POST['name'];
         $product->description = $_POST['description'];
-        $product->image       = $_FILES['image']['name'];
+        if($_FILES)
+        {
+            $product->image = $_FILES['image']['name']; 
+        }    
         $product->price       = $_POST['price'];
         $product->category    = $_POST['category'];
         $product->save();
@@ -66,8 +71,11 @@ class ProductController extends Controller
             mkdir($uploaddir, 0777, true);
         }
 
-        $uploadfile = $uploaddir . basename($_FILES['image']['name']);
-        move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
+        if($_FILES)
+        {
+            $uploadfile = $uploaddir . basename($_FILES['image']['name']);
+            move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
+        }
 
         return redirect('products')->with('message', 'Product updated successfully!');
     }

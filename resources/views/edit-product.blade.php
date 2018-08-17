@@ -26,7 +26,9 @@
 			<p>
 				<select type="text" class="form-control" name="category" aria-describedby="sizing-addon1" required="required">
 					<option value="">Category</option>
-					<option value="1">Teste</option>
+					@foreach($categories as $category)
+						<option value="{{$category['id']}}">{{$category['name']}}</option>
+					@endforeach
 				</select>
 			</p>
 		</div>

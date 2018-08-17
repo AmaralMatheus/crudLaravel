@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@init');
 Route::get('products', 'ProductController@init');
 
 Route::get('products/insert', function () {
-    return view('insert-product');
+    return view('insert-product',['categories' => app('App\Models\Category')->get()]);
 });
 
 Route::get('login', function () {

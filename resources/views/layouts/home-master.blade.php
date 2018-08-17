@@ -31,7 +31,7 @@
         <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/dataTable.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
-        <title>ProgQuest - @yield('title')</title>
+        <title>Products Homepage</title>
     </head>
     <body>
         <nav class="navbar navbar-default" style="margin: 0;">

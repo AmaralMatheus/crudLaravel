@@ -21,13 +21,16 @@
 		background-color: #000;
 		color: #fff;
 		padding: 10px;
-		margin-bottom: 25px;
+		margin-bottom: 55px;
 	}
 	.product-img {
       -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
       mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
       margin-bottom: 15px;
-      width: 100%;
+	  position: relative;
+	  width: 100%;
+	  height: 200px;
+	  overflow: hidden;
     }
 
     .one{
@@ -71,7 +74,7 @@
 		<div class="row">
 			@foreach ($products as $product)
 				<a href="products/preview/{{$product['id']}}" class="col-md-4" align="center">
-					<img class="product-img img-responsive" src="{{ URL::asset('img/'.$product['id'].'/'.$product['image'])}}">
+					<img class="product-img" src="{{ URL::asset('img/'.$product['id'].'/'.$product['image'])}}">
 					<div class="row">
 						<div class="col-md-6">
 							<h2>{{$product['name']}}</h2>
@@ -112,7 +115,7 @@
 	</div>
 </section>
 
-<section>
+<section style="background-color: #fbfbfb; padding: 30px;">
 	<div align="center">
 		<h1><b>WANT 80% OFF?</b></h1>
 

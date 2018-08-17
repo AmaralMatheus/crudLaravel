@@ -12,7 +12,7 @@
         <script type="text/javascript" src="{{ URL::asset('js/dataTable.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/MoneyMask.min.js') }}"></script>
-        <title>ProgQuest - @yield('title')</title>
+        <title>Laravel CRUD</title>
     </head>
     <body>
 
