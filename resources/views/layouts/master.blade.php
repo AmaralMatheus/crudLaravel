@@ -11,21 +11,23 @@
         <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/dataTable.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/MoneyMask.min.js') }}"></script>
         <title>ProgQuest - @yield('title')</title>
     </head>
     <body>
 
-    	<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">
-		        <img class="img-responsive" style="width: 25%" alt="Brand" src="{{ URL::asset('img/logo.png') }}">
-		      </a>
-		    </div>
-		  </div>
-		</nav>
+    	<nav class="navbar navbar-default" style="margin: 0;">
+          <div class="container">
+            <div class="navbar-header" align="left">
+                <a href="/crudLaravel/public/"><img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}"></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right" align="center">
+                <li><a href="/crudLaravel/public/" style="line-height: 2.3">SIGNOUT</a></li>
+            </ul>
+          </div>
+        </nav>
 
-       <div class="container">
+       <div class="container" style="padding-top: 20px;">
     		@yield('content')
        </div>
     </body>

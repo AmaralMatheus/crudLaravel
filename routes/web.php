@@ -11,14 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@init');
 
 Route::get('products', 'ProductController@init');
 
 Route::get('products/insert', function () {
     return view('insert-product');
+});
+
+Route::get('login', function () {
+    return view('login');
 });
 
 

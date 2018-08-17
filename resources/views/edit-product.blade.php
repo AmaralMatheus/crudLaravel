@@ -4,7 +4,7 @@
 <form method="POST" action="/crudLaravel/public/products/update/{{$product['id']}}">
 	{!! csrf_field() !!}
 	<p>
-		<input type="submit" class="btn btn-primary" role="button" placeholder="Save Product">
+		<input type="submit" class="btn btn-primary" role="button" value="Save Product">
 		<a class="btn btn-danger" href="/crudLaravel/public/products" role="button">Cancel</a>
 		<a class="btn btn-primary" href="/crudLaravel/public/products/preview/{{$product['id']}}" role="button">Preview</a>
 	</p>
@@ -21,7 +21,7 @@
 			<div class="form-group" id="imagePreview">
 				<img id="output" class="img-responsive" src="{{ URL::asset('img/'.($product['image'] ? $product['id'].'/'.$product['image'] : 'img.png')) }}" />
 	        </div>
-			<p><input type="file" class="form-control"  name="image" placeholder="Product Name" accept="image/*" onchange="loadFile(event)" required></p>
+			<p><input type="file" class="form-control"  name="image" placeholder="Product Name" accept="image/*" onchange="loadFile(event)" {{(!$product['image']) ? 'required' : ''}}></p>
 
 			<p>
 				<select type="text" class="form-control" name="category" aria-describedby="sizing-addon1" required="required">

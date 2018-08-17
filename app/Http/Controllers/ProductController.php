@@ -10,6 +10,11 @@ class ProductController extends Controller
         return view('products',['products' => $products]);
     }
 
+    public function GetProducts(){
+        $products = Product::where('active',1)->orderBy('id')->paginate(100);
+        return $products;
+    }
+
     public function preview($id)
     {
         $products = $id? Product::findOrFail($id) : $_POST;

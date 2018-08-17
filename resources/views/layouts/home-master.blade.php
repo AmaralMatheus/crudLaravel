@@ -34,28 +34,29 @@
         <title>ProgQuest - @yield('title')</title>
     </head>
     <body>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" style="margin: 0;">
           <div class="container">
-            <div class="navbar-header" align="center">
-                <img class="img-responsive" style="width: 25%;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}">
+            <div class="navbar-header" align="left">
+                <a href="/crudLaravel/public/"><img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}"></a>
             </div>
             <ul class="nav navbar-nav">
-              <li><a href="#">FOR MAN</a></li>
-              <li><a href="#">FOR WOMAN</a></li>
-              <li><a href="#">OTHERS</a></li>
+              <li><a href="#" style="line-height: 2.3">FOR MAN</a></li>
+              <li><a href="#" style="line-height: 2.3">FOR WOMAN</a></li>
+              <li><a href="#" style="line-height: 2.3">OTHERS</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" align="center">
                 <li>
-                    <div class="row" style="margin-top: 7.5px;border-radius:0;border:none;border-bottom: solid #000 1px;">
+                    <div class="row" style="margin-top: 7.5px;border-radius:0;border:none;border-bottom: solid #000 1px;    padding-top: 7px;padding-right: 7.5px;">
                         <div class="col-md-10">
-                            <input type="text" style="border:none" class="form-control" placeholder="Search... ">
+                            <input type="text" style="border:none;background-color: #fbfbfb; box-shadow: none;" class="form-control" placeholder="Search... ">
                         </div>
-                        <div class="col-md-2" style="line-height: 2.5">
+                        <div class="col-md-2" style="line-height: 2.5;">
                             <span class="glyphicon glyphicon-search"></span>
                         </div>
                     </div>
                 </li>
-                <li><a href="#">ADMIN AREA</a></li>
+                <li><a href="#" style="line-height: 2.3;padding-left: 30px;"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                <li><a href="/crudLaravel/public/login" style="line-height: 2.3">ADMIN AREA</a></li>
             </ul>
           </div>
         </nav>
@@ -66,23 +67,23 @@
 
        <div class="footer" style="background-color: #000; color: #fff; padding-top: 20px">
             <div class="container">
-                <div class="row" align="center" style="padding-bottom: 40px">
+                <div class="row" align="center" style="padding-bottom: 40px; ">
                     <div class="col-md-3">
                         <h3>A product of</h3>
                     </div>
                     <div class="col-md-3">
                         <h3><b>ABOUT</b></h3>
                         <br>
-                          <p><a href="#">OUR MISSION</a></p>
-                          <p><a href="#">ABOUT US</a></p>
-                          <p><a href="#">REVIEWS</a></p>
+                          <p><a href="#" style="color: #fff !important">OUR MISSION</a></p>
+                          <p><a href="#" style="color: #fff !important">ABOUT US</a></p>
+                          <p><a href="#" style="color: #fff !important">REVIEWS</a></p>
                     </div>
                     <div class="col-md-3">
                         <h3><b>MENU</b></h3>
                         <br>
-                          <p><a href="#">FOR MAN</a></p>
-                          <p><a href="#">FOR WOMAN</a></p>
-                          <p><a href="#">OTHERS</a></p>
+                          <p><a href="#" style="color: #fff !important">FOR MAN</a></p>
+                          <p><a href="#" style="color: #fff !important">FOR WOMAN</a></p>
+                          <p><a href="#" style="color: #fff !important">OTHERS</a></p>
                     </div>
                     <div class="col-md-3">
                         <h3><b>SOCIAL MEDIA</b></h3>
@@ -90,9 +91,9 @@
                         <div style="color: black !important; font-size: 20px">
                             <div>
                                 <div >
-                                    <i style="background-color: #fff; border-radius: 50%; padding:5px; width: 12%;" class="fa fa-facebook"></i>
-                                    <i style="background-color: #fff; border-radius: 50%; padding:5px; width: 12%;" class="fa fa-twitter"></i>
-                                    <i style="background-color: #fff; border-radius: 50%; padding:5px; width: 12%;" class="fa fa-youtube"></i>
+                                    <i style="background-color: #fff; border-radius: 50%; padding:5px; width: 30px;" class="fa fa-facebook"></i>
+                                    <i style="background-color: #fff; border-radius: 50%; padding:5px; width: 30px;" class="fa fa-twitter"></i>
+                                    <i style="background-color: #fff; border-radius: 50%; padding:5px; width: 30px;" class="fa fa-youtube"></i>
                                 </div>
                             </div>
                         </div>
