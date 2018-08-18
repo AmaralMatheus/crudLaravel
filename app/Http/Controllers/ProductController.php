@@ -12,7 +12,7 @@ class ProductController extends Controller
     }
 
     public function GetProducts(){
-        $products = Product::where('active',1)->orderBy('id')->paginate(100);
+        $products = Product::where('active',1)->orderBy('id')->paginate(3);
         return $products;
     }
 
@@ -61,6 +61,8 @@ class ProductController extends Controller
 
         $uploadfile = $uploaddir . basename($_FILES['csv']['name']);
         move_uploaded_file($_FILES['csv']['tmp_name'], $uploadfile);
+
+        return redirect('products')->with('message', 'Product updated successfully!');
     }
   
     public function update($id)

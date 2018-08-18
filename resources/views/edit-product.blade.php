@@ -5,8 +5,8 @@
 	{!! csrf_field() !!}
 	<p>
 		<input type="submit" class="btn btn-primary" role="button" value="Save Product">
-		<a class="btn btn-danger" href="/crudLaravel/public/products" role="button">Cancel</a>
-		<a class="btn btn-primary" href="/crudLaravel/public/products/preview/{{$product['id']}}" role="button">Preview</a>
+		<a class="btn btn-danger" href="/products" role="button">Cancel</a>
+		<a class="btn btn-primary" href="/products/preview/{{$product['id']}}" role="button">Preview</a>
 	</p>
 	<div class="row">
 		<div class="col-md-6">

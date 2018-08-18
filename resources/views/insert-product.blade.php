@@ -5,7 +5,7 @@
 	{!! csrf_field() !!}
 	<p>
 		<input type="submit" class="btn btn-primary" role="button" value="Save Product">
-		<a class="btn btn-danger" href="/crudLaravel/public/products" role="button">Cancel</a>
+		<a class="btn btn-danger" href="/products" role="button">Cancel</a>
 	</p>
 	<div class="row">
 		<div class="col-md-6">

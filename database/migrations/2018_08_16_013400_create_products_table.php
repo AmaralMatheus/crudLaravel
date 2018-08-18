@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->string('image')->nullable()->default('');
             $table->string('price');
-            $table->string('category')->unsigned()->nullable()->change();
+            $table->string('category')->nullable()->default('');
             $table->string('active')->default('1');
             $table->rememberToken();
             $table->timestamps();

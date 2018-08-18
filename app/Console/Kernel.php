@@ -27,8 +27,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')
-        //          ->hourly();
-        $schedule->command('Importproducts')->everyMinute()->appendOutputTo(storage_path('logs/examplecommand.log'));
+        $schedule->command('Importproducts')->everyMinute()->withoutOverlapping()->appendOutputTo(storage_path('logs/examplecommand.log'));
     }
 
     /**

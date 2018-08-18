@@ -19,10 +19,10 @@
     	<nav class="navbar navbar-default" style="margin: 0;">
           <div class="container">
             <div class="navbar-header" align="left">
-                <a href="/crudLaravel/public/"><img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}"></a>
+                <a href="/"><img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}"></a>
             </div>
             <ul class="nav navbar-nav navbar-right" align="center">
-                <li><a href="/crudLaravel/public/" style="line-height: 2.3">SIGNOUT</a></li>
+                <li><a href="/" style="line-height: 2.3">SIGNOUT</a></li>
             </ul>
           </div>
         </nav>
