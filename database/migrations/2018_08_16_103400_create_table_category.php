@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class CreateTableCategory extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,8 @@ class CreatePasswordResetsTable extends Migration
         Schema::create('category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

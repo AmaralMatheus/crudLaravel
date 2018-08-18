@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->string('image');
+            $table->string('image')->nullable()->default('');
             $table->string('price');
-            $table->string('category');
-            $table->string('active');
+            $table->string('category')->unsigned()->nullable()->change();
+            $table->string('active')->default('1');
             $table->rememberToken();
             $table->timestamps();
         });
