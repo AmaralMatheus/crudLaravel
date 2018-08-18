@@ -3,7 +3,7 @@
 @section('content')
 
 	<a class="btn btn-primary" href="products/insert" role="button">Add Product</a>
-	<a class="btn btn-primary" href="#" role="button">Import Product</a>
+	<a class="btn btn-primary" data-toggle='modal' data-target='#Import' role="button">Import Product</a>
 
 	<table align="center" id="pessoas" class="table table-striped table-bordered">
 	 <thead>
@@ -38,20 +38,40 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">Aviso</h4>
+		        <h4 class="modal-title">Warning</h4>
 		      </div>
 		      <div class="modal-body">
-		        <p>Deseja realmente excluir esta pessoa?</p>
+		        <p>Delete this product?</p>
 		      </div>
 		      <div class="modal-footer" id="footer" align="center">
-		      	<a id="delete-id" class="btn btn-danger">Sim</a>
-		        <a class="btn btn-success" data-dismiss="modal">Não</a>
+		      	<a id="delete-id" class="btn btn-danger">Yes</a>
+		        <a class="btn btn-success" data-dismiss="modal">No</a>
 		      </div>
 		    </div>
 		  </div>
 		</div>
 	 </tbody>
 	</table>
+
+	<div id="Import" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Import product</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form method="POST" action="products/import" enctype="multipart/form-data">
+		        	{!! csrf_field() !!}
+		        	<input type="file" name="csv">
+		      </div>
+		      <div class="modal-footer" id="footer" align="center">
+		      		<input type="submit" value="Import" class="btn btn-primary" role="button">
+		      	</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
 	<script type="text/javascript">
 		function getId(id){

@@ -51,6 +51,17 @@ class ProductController extends Controller
         $categories = Category::get();
         return view('edit-product',['product' => $product,'categories' => $categories]);
     }
+
+    public function import(){
+        $uploaddir = public_path().'/../resources/assets/imports/';
+
+        if (!file_exists($uploaddir)) {
+            mkdir($uploaddir, 0777, true);
+        }
+
+        $uploadfile = $uploaddir . basename($_FILES['csv']['name']);
+        move_uploaded_file($_FILES['csv']['tmp_name'], $uploadfile);
+    }
   
     public function update($id)
     {

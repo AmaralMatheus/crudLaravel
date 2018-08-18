@@ -25,6 +25,12 @@
                 color: #fff;
                 text-decoration: none;
             }
+            h1{
+                font-family: verdana;
+            }
+            h3{
+                font-weight: 400;
+            }
         </style>
         <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/jquery.mask.min.js') }}"></script>
@@ -34,7 +40,8 @@
         <title>Products Homepage</title>
     </head>
     <body>
-        <nav class="navbar navbar-default" style="margin: 0;">
+        <nav class="navbar navbar-default" style="margin: 0;
+      font-weight: 300;">
           <div class="container">
             <div class="navbar-header" align="left">
                 <a href="/crudLaravel/public/"><img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}"></a>
@@ -48,7 +55,7 @@
                 <li>
                     <div class="row" style="margin-top: 7.5px;border-radius:0;border:none;border-bottom: solid #000 1px;    padding-top: 7px;padding-right: 7.5px;">
                         <div class="col-md-10">
-                            <input type="text" style="border:none;background-color: #fbfbfb; box-shadow: none;" class="form-control" placeholder="Search... ">
+                            <input type="text" style="padding:0;border:none;background-color: #fbfbfb; box-shadow: none;" class="form-control" placeholder="Search... ">
                         </div>
                         <div class="col-md-2" style="line-height: 2.5;">
                             <span class="glyphicon glyphicon-search"></span>
@@ -65,28 +72,29 @@
     		@yield('content')
        </div>
 
-       <div class="footer" style="background-color: #000; color: #fff; padding-top: 20px">
+       <div class="footer" style="background-color: #000; color: #fff; padding-top: 20px;
+      font-weight: 300;">
             <div class="container">
                 <div class="row" align="center" style="padding-bottom: 40px; ">
                     <div class="col-md-3">
                         <h3>A product of</h3>
                     </div>
                     <div class="col-md-3">
-                        <h3><b>ABOUT</b></h3>
+                        <h3>ABOUT</h3>
                         <br>
                           <p><a href="#" style="color: #fff !important">OUR MISSION</a></p>
                           <p><a href="#" style="color: #fff !important">ABOUT US</a></p>
                           <p><a href="#" style="color: #fff !important">REVIEWS</a></p>
                     </div>
                     <div class="col-md-3">
-                        <h3><b>MENU</b></h3>
+                        <h3>MENU</h3>
                         <br>
                           <p><a href="#" style="color: #fff !important">FOR MAN</a></p>
                           <p><a href="#" style="color: #fff !important">FOR WOMAN</a></p>
                           <p><a href="#" style="color: #fff !important">OTHERS</a></p>
                     </div>
                     <div class="col-md-3">
-                        <h3><b>SOCIAL MEDIA</b></h3>
+                        <h3>SOCIAL MEDIA</h3>
                         <br>
                         <div style="color: black !important; font-size: 20px">
                             <div>

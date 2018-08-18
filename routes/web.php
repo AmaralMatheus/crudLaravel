@@ -23,6 +23,7 @@ Route::get('login', function () {
     return view('login');
 });
 
+Route::post('products/import','ProductController@import');
 
 Route::get('products/preview/{id}', 'ProductController@preview');
 Route::post('products/preview', 'ProductController@preview');

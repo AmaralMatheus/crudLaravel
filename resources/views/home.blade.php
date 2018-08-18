@@ -21,6 +21,7 @@
 		background-color: #000;
 		color: #fff;
 		padding: 10px;
+		margin-top: 25px;
 		margin-bottom: 55px;
 	}
 	.product-img {
@@ -57,13 +58,10 @@
 
 <section class="home">
 	<div class="container">
-		<h1 class="main-title" style="line-height: 6">Title test</h1>
-		<h2 class="title">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+		<div class="row">
+			<h1 class="main-title" style="padding-top: 200px;pa">Title test</h1>
+			<h2 class="title" style="width: 35%;margin:0;">ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+		</div>
 	</div>
 </section>
 
@@ -77,11 +75,11 @@
 					<img class="product-img" src="{{ URL::asset('img/'.$product['id'].'/'.$product['image'])}}">
 					<div class="row">
 						<div class="col-md-6">
-							<h2>{{$product['name']}}</h2>
+							<h3>{{$product['name']}}</h3>
 						</div>
 
 						<div class="col-md-6">
-							<h1><b>${{$product['price']}}</b></h1>
+							<h3><b>${{$product['price']}}</b></h3>
 						</div>
 					</div>
 					<button class="cart-button">ADD TO CART</button>
@@ -101,11 +99,11 @@
 					<img class="product-img img-responsive" src="{{ URL::asset('img/'.$product['id'].'/'.$product['image'])}}">
 					<div class="row">
 						<div class="col-md-6">
-							<h2>{{$product['name']}}</h2>
+							<h3>{{$product['name']}}</h3>
 						</div>
 
 						<div class="col-md-6">
-							<h1><b>${{$product['price']}}</b></h1>
+							<h3><b>${{$product['price']}}</b></h3>
 						</div>
 					</div>
 					<button class="cart-button">ADD TO CART</button>
@@ -117,11 +115,11 @@
 
 <section style="background-color: #fbfbfb; padding: 30px;">
 	<div align="center">
-		<h1><b>WANT 80% OFF?</b></h1>
+		<h1 style="font-size: 50px;">WANT 80% OFF?</h1>
 
 		<p><h3>SUBSCRIBE BELOW TO GET</h3></p>	
 		<br>
-		<p><input type="text" name="" class="form-control" placeholder="Email" style="width:25%;margin-top: 7.5px;border-radius:0;border:none;border-bottom: solid #000 1px; box-shadow: none; box-decoration-break: none"></p>
+		<p><input type="text" name="" class="form-control" placeholder="Email" style="padding:0; background-color:#fbfbfb;width:25%;margin-top: 7.5px;border-radius:0;border:none;border-bottom: solid #000 1px; box-shadow: none; box-decoration-break: none"></p>
 		<br>
 		<button class="cart-button">SUBSCRIBE</button>
 	</div>

@@ -13,6 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        Commands\Importproducts::class,
+        //Commands\Importproducts
         //
     ];
 
@@ -26,6 +28,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('Importproducts')->everyMinute()->appendOutputTo(storage_path('logs/examplecommand.log'));
     }
 
     /**
