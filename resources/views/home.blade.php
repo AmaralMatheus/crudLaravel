@@ -49,6 +49,7 @@
 	  position: relative;
 	  width: 100%;
 	  overflow: hidden;
+	  height: 250px;
     }
 
     .one{

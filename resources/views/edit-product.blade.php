@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<form method="POST" action="/products/update/{{$product['id']}}">
+<form method="POST" action="/products/update/{{$product['id']}}" enctype="multipart/form-data">
 	{!! csrf_field() !!}
 	<p>
 		<input type="submit" class="btn btn-primary" role="button" value="Save Product">

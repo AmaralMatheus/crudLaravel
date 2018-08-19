@@ -1,1 +1,1 @@
-<h1>E-mail has been sent</h1>
+<h1>New products are avaliable</h1>
