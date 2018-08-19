@@ -83,7 +83,7 @@
         
         <nav class="navbar navbar-default" style="margin: 0;
       font-weight: 300;">
-            <div align="center" style="background-color: #000; color: #fff;">FREE SHIPING</div>
+            <div align="center" style="background-color: #000; color: #fff; font-weight: 400">FREE SHIPING</div>
           <div class="container">
             <div class="navbar-header" align="left">
                 <a href="/"><img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}"></a>
@@ -117,9 +117,11 @@
        <div class="footer" style="background-color: #000; color: #fff; padding-top: 20px;
       font-weight: 300;">
             <div class="container">
-                <div class="row" align="center" style="padding-bottom: 40px; ">
-                    <div class="col-md-3">
-                        <h3>A product of</h3>
+                <div class="row" align="center" style="padding-bottom: 40px; font-weight: 200 !important; ">
+                    <div class="col-md-3" align="left">
+                        <h3 style="font-weight: 200 !important;">A product of</h3>
+                        <img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo-black.png') }}">
+                        <h3 style="font-weight: 200 !important;">collection</h3>
                     </div>
                     <div class="col-md-3">
                         <h3>ABOUT</h3>
