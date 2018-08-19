@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Console\Command;
 use App\Models\Product;
+use Mail;
 
 class ImportProducts extends Command
 {
@@ -62,7 +63,14 @@ class ImportProducts extends Command
                     }
                     # do same stuff with the $line
                 }
+                //unlink($file);
                 fclose($file);
+                $data = array('name'=>"Virat Gandhi");
+                Mail::send('mail',$data, function($message) {
+                    $message->to('matheusrockway@gmail.com', 'Product import')->subject('Product mport');
+                    $message->from('xyz@gmail.com','Virat Gandhi');
+                    echo "HTML Email Sent. Check your inbox.";
+                });
             }
         }
         //
