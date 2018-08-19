@@ -3,7 +3,7 @@
 @section('content')
 
 	<a class="btn btn-primary" href="products/insert" role="button">Add Product</a>
-	<a class="btn btn-primary" data-toggle='modal' data-target='#Import' role="button">Import Product</a>
+	<a class="btn btn-primary" data-toggle='modal' data-target='#Import'role="button">Import Product</a>
 
 	<table align="center" id="pessoas" class="table table-striped table-bordered">
 	 <thead>
@@ -63,7 +63,7 @@
 		      <div class="modal-body">
 		        <form method="POST" action="products/import" enctype="multipart/form-data">
 		        	{!! csrf_field() !!}
-		        	<input type="file" name="csv">
+		        	<input type="file" name="csv" accept=".csv" required>
 		      </div>
 		      <div class="modal-footer" id="footer" align="center">
 		      		<input type="submit" value="Import" class="btn btn-primary" role="button">

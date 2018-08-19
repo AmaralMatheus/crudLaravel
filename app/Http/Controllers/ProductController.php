@@ -12,7 +12,7 @@ class ProductController extends Controller
     }
 
     public function GetProducts(){
-        $products = Product::where('active',1)->orderBy('id')->paginate(3);
+        $products = Product::where('active',1)->orderBy('id')->paginate(10);
         return $products;
     }
 

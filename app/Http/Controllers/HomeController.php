@@ -8,6 +8,6 @@ class HomeController extends Controller
     {
         $products = app('App\Http\Controllers\ProductController')->GetProducts();
         //var_dump($products);
-        return view('home',['products' => $products]);
+        return view('home',['products' => $products, 'x' => null]);
     }
 }

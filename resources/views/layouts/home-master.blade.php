@@ -5,7 +5,7 @@
     	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap-theme.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/dataTable.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/main.css') }}">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
         <style type="text/css">
@@ -31,17 +31,59 @@
             h3{
                 font-weight: 400;
             }
+            body{
+            }
+            .carousel {
+                margin-bottom: 0;
+                padding: 0 40px 30px 40px;
+            }
+            /* The controlsy */
+            .carousel-control {
+                left: -12px;
+                height: 40px;
+                width: 40px;
+                background: none repeat scroll 0 0 #222222;
+                border: 4px solid #FFFFFF;
+                border-radius: 23px 23px 23px 23px;
+                margin-top: 90px;
+            }
+            .carousel-control.right {
+                right: -12px;
+            }
+            /* The indicators */
+            .carousel-indicators {
+                right: 50%;
+                top: auto;
+                bottom: -10px;
+                margin-right: -19px;
+            }
+            /* The colour of the indicators */
+            .carousel-indicators li {
+                background: #cecece;
+            }
+            .carousel-indicators .active {
+            background: #000;
+            }
         </style>
         <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/jquery.mask.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/dataTable.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#Carousel').carousel({
+                    interval: 5000
+                })
+            });
+        </script>
         <title>Products Homepage</title>
     </head>
     <body>
+        
         <nav class="navbar navbar-default" style="margin: 0;
       font-weight: 300;">
+            <div align="center" style="background-color: #000; color: #fff;">FREE SHIPING</div>
           <div class="container">
             <div class="navbar-header" align="left">
                 <a href="/"><img class="img-responsive" width="100" style="line-height: 2;border:none;padding-top: 7.5px;" alt="Brand" src="{{ URL::asset('img/logo.png') }}"></a>
@@ -66,7 +108,7 @@
                 <li><a href="/login" style="line-height: 2.3">ADMIN AREA</a></li>
             </ul>
           </div>
-        </nav>
+        </nav>     
 
        <div class="body-content">
     		@yield('content')

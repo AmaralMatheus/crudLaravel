@@ -30,13 +30,12 @@
       margin-bottom: 15px;
 	  position: relative;
 	  width: 100%;
-	  height: 200px;
 	  overflow: hidden;
     }
 
     .one{
 		  background-color: #000;
-		  background-image: -webkit-linear-gradient(75deg, #fff 68%, #000 32%);
+		  background-image: -webkit-linear-gradient(72.5deg, #fff 68%, #000 32%);
 	}
 	.title{
 		margin-bottom: 350px;
@@ -55,7 +54,6 @@
 		color: black;
 	}
 </style>
-
 <section class="home">
 	<div class="container">
 		<div class="row">
@@ -65,26 +63,64 @@
 	</div>
 </section>
 
+
+
+
 <section align="center" class="one">
 	<div class="container">
 		<h1 class="main-title">FEATURED</h1>
 		<h2 class="title">FOR MAN</h2>
 		<div class="row">
-			@foreach ($products as $product)
-				<a href="products/preview/{{$product['id']}}" class="col-md-4" align="center">
-					<img class="product-img" src="{{ URL::asset('img/'.$product['id'].'/'.$product['image'])}}">
-					<div class="row">
-						<div class="col-md-6">
-							<h3>{{$product['name']}}</h3>
-						</div>
+			<div id="Carousel" class="carousel slide">
+				<ol class="carousel-indicators">
+					@foreach ($products as $product)
+						@if($x % 3 == 0)
+							 <li data-target="#Carousel" data-slide-to="2" class="{{$x==0 ? 'active' : ''}}"></li>
+						@endif
+						<?php
+						   $x++;
+						?>
+					@endforeach
+				</ol>
+				
+				<?php
+				   $x=0;
+				?>
 
-						<div class="col-md-6">
-							<h3><b>${{$product['price']}}</b></h3>
-						</div>
-					</div>
-					<button class="cart-button">ADD TO CART</button>
-				</a>
-			@endforeach
+				<div class="carousel-inner">
+					@foreach ($products as $product)
+						@if($x % 3 == 0 && $x > 0)
+								</div>
+	                		</div>         		
+						@endif
+						@if($x % 3 == 0)
+							<div class="item {{$x==0 ? 'active' : ''}}">
+	                			<div class="row">
+						@endif
+									<a href="products/preview/{{$product['id']}}" class="col-md-4" align="center">
+										<img class="product-img img-responsive" src="{{ URL::asset('img/'.($product['image'] ? $product['id'].'/'.$product['image'] : 'img.png'))}}">
+										<div class="row">
+											<div class="col-md-6">
+												<h3>{{$product['name']}}</h3>
+											</div>
+
+											<div class="col-md-6">
+												<h3><b>${{$product['price']}}</b></h3>
+											</div>
+										</div>
+										<button class="cart-button">ADD TO CART</button>
+									</a>
+						
+						<?php
+						   $x++;
+						?>
+					@endforeach
+							</div>
+	                	</div>   
+				</div><!--.carousel-inner-->
+                 <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                 <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+            </div><!--.Carousel-->
 		</div>
 	</div>
 </section>
@@ -94,21 +130,56 @@
 		<h1 class="main-title">FEATURED</h1>
 		<h2 class="title">FOR WOMAN</h2>
 		<div class="row">
-			@foreach ($products as $product)
-				<a href="products/preview/{{$product['id']}}" class="col-md-4" align="center">
-					<img class="product-img img-responsive" src="{{ URL::asset('img/'.$product['id'].'/'.$product['image'])}}">
-					<div class="row">
-						<div class="col-md-6">
-							<h3>{{$product['name']}}</h3>
-						</div>
+			<div id="Carousel2" class="carousel slide">
+				<ol class="carousel-indicators">
+					@foreach ($products as $product)
+						@if($x % 3 == 0)
+							 <li data-target="#Carousel2" data-slide-to="2" class="{{$x==0 ? 'active' : ''}}"></li>
+						@endif
+						<?php
+						   $x++;
+						?>
+					@endforeach
+				</ol>
+				
+				<?php
+				   $x=0;
+				?>
 
-						<div class="col-md-6">
-							<h3><b>${{$product['price']}}</b></h3>
-						</div>
-					</div>
-					<button class="cart-button">ADD TO CART</button>
-				</a>
-			@endforeach
+				<div class="carousel-inner">
+					@foreach ($products as $product)
+						@if($x % 3 == 0 && $x > 0)
+								</div>
+	                		</div>         		
+						@endif
+						@if($x % 3 == 0)
+							<div class="item {{$x==0 ? 'active' : ''}}">
+	                			<div class="row">
+						@endif
+									<a href="products/preview/{{$product['id']}}" class="col-md-4" align="center">
+										<img class="product-img img-responsive" src="{{ URL::asset('img/'.($product['image'] ? $product['id'].'/'.$product['image'] : 'img.png'))}}">
+										<div class="row">
+											<div class="col-md-6">
+												<h3>{{$product['name']}}</h3>
+											</div>
+
+											<div class="col-md-6">
+												<h3><b>${{$product['price']}}</b></h3>
+											</div>
+										</div>
+										<button class="cart-button">ADD TO CART</button>
+									</a>
+						
+						<?php
+						   $x++;
+						?>
+					@endforeach
+							</div>
+	                	</div>   
+				</div><!--.carousel-inner-->
+                 <a data-slide="prev" href="#Carousel2" class="left carousel-control">‹</a>
+                 <a data-slide="next" href="#Carousel2" class="right carousel-control">›</a>
+            </div><!--.Carousel-->
 		</div>
 	</div>
 </section>
