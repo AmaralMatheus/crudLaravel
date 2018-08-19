@@ -7,7 +7,7 @@ class ProductController extends Controller
 {
     public function init()
     {
-        $products = Product::where('active',1)->orderBy('id')->paginate(100);
+        $products = Product::where('active',1)->orderBy('id')->paginate(1000);
         return view('products',['products' => $products]);
     }
 

@@ -1,5 +1,23 @@
 @extends('layouts.home-master')
 @section('content')
+<script type="text/javascript">
+		// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	        document.getElementById("myBtn").style.display = "block";
+	    } else {
+	        document.getElementById("myBtn").style.display = "none";
+	    }
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	    document.body.scrollTop = 0; // For Safari
+	    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+</script>
 <style type="text/css">
 	.home{
 		background-image: url('{{ URL::asset('img/wallpaper.png')}}');
@@ -52,6 +70,23 @@
 	}
 	a:hover{
 		color: black;
+	}
+	#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #ddd; /* Set a background color */
+    color: #444; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding-left: 10px; /* Some padding */
+    padding-right: 10px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    font-size: 35px;
 	}
 </style>
 <section class="home">
@@ -118,8 +153,6 @@
 							</div>
 	                	</div>   
 				</div><!--.carousel-inner-->
-                 <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-                 <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
             </div><!--.Carousel-->
 		</div>
 	</div>
@@ -177,8 +210,6 @@
 							</div>
 	                	</div>   
 				</div><!--.carousel-inner-->
-                 <a data-slide="prev" href="#Carousel2" class="left carousel-control">‹</a>
-                 <a data-slide="next" href="#Carousel2" class="right carousel-control">›</a>
             </div><!--.Carousel-->
 		</div>
 	</div>
@@ -195,4 +226,7 @@
 		<button class="cart-button">SUBSCRIBE</button>
 	</div>
 </section>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><span style="
+    line-height: 1.5;" class="glyphicon glyphicon-menu-up"></span></button>
 @endsection

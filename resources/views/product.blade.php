@@ -26,7 +26,7 @@
 </style>
 
 <div class="row" style="padding: 20px;">
-	<div class="col-md-6">
+	<div class="col-md-6" align="right">
 		<img class="img-responsive" src="{{ URL::asset('img/'.($product['image'] ? $product['id'].'/'.$product['image'] : 'img.png')) }}">
 	</div>
 	<div class="col-md-6">
